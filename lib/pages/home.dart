@@ -1,3 +1,4 @@
+import 'package:barberapp/pages/booking.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -71,7 +72,7 @@ class _HomeState extends State<Home> {
 
               const SizedBox(height: 20),
 
-              // First row
+              // Service Rows
               _buildServiceRow(
                 "Hair Washing",
                 "images/hairwashing.avif",
@@ -81,7 +82,6 @@ class _HomeState extends State<Home> {
 
               const SizedBox(height: 20),
 
-              // Second row
               _buildServiceRow(
                 "Hair Cutting",
                 "images/haircutting.webp",
@@ -91,7 +91,6 @@ class _HomeState extends State<Home> {
 
               const SizedBox(height: 20),
 
-              // Third row
               _buildServiceRow(
                 "Kids Haircut",
                 "images/kidshaircutting.webp",
@@ -114,13 +113,30 @@ class _HomeState extends State<Home> {
     return Row(
       children: [
         Expanded(
-          child: ServiceCard(title: title1, imagePath: image1),
+          child: ServiceCard(
+            title: title1,
+            imagePath: image1,
+            onTap: () => _navigateToBooking(context, title1),
+          ),
         ),
         const SizedBox(width: 16),
         Expanded(
-          child: ServiceCard(title: title2, imagePath: image2),
+          child: ServiceCard(
+            title: title2,
+            imagePath: image2,
+            onTap: () => _navigateToBooking(context, title2),
+          ),
         ),
       ],
+    );
+  }
+
+  void _navigateToBooking(BuildContext context, String service) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => Booking(service: service),
+      ),
     );
   }
 }
@@ -128,39 +144,48 @@ class _HomeState extends State<Home> {
 class ServiceCard extends StatelessWidget {
   final String title;
   final String imagePath;
+  final VoidCallback onTap;
 
-  const ServiceCard({super.key, required this.title, required this.imagePath});
+  const ServiceCard({
+    super.key,
+    required this.title,
+    required this.imagePath,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: const Color(0xFF3a1f1d),
-        borderRadius: BorderRadius.circular(16),
-      ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Image.asset(
-              imagePath,
-              height: 80,
-              width: 80,
-              fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          color: const Color(0xFF3a1f1d),
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Image.asset(
+                imagePath,
+                height: 80,
+                width: 80,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
-              fontWeight: FontWeight.w600,
+            const SizedBox(height: 8),
+            Text(
+              title,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 16.0,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

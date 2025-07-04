@@ -1,4 +1,5 @@
-import 'package:barberapp/pages/booking.dart';
+
+import 'package:barberapp/pages/home.dart';
 
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Booking(),
+      home: const Home(),
     );
   }
 }
