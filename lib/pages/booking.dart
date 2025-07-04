@@ -13,14 +13,28 @@ class _BookingState extends State<Booking> {
     return Scaffold(
       backgroundColor: const Color(0xFF2b1615),
       body: Container(
+        margin: EdgeInsets.only(left: 20.0),
+        
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 60), // fixed line
-              child: Icon(
-                Icons.arrow_back_ios_new_rounded,
-                color: Colors.white,
+            GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: const Padding(
+                padding: EdgeInsets.only(left: 20, top: 60),
+                child: Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  color: Colors.white,
+                  size: 30.0,
+                ),
               ),
+            ),
+            SizedBox(height: 30.0,),
+            const Text(
+              "Let's the\n journey begin",
+              style: TextStyle(color: Colors.white70,fontSize: 28.0,fontWeight: FontWeight.w500),
             ),
           ],
         ),
