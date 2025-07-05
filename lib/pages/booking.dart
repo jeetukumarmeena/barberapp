@@ -108,7 +108,7 @@ class _BookingState extends State<Booking> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Booking Confirmed'),
+        title: const Text('Booking Now'),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,7 +224,7 @@ class _BookingState extends State<Booking> {
                 height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xffb4817e),
+                    backgroundColor: const Color.fromRGBO(230, 241, 2, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -233,7 +233,7 @@ class _BookingState extends State<Booking> {
                   child: _isLoading
                       ? const CircularProgressIndicator(color: Colors.white)
                       : const Text(
-                          'CONFIRM BOOKING',
+                          'Booking Now',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 18,
@@ -272,7 +272,7 @@ class _DateTimePickerCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10.0),
-        height: 120,
+        height: 100,
         decoration: BoxDecoration(
           color: const Color(0xffb4817e),
           borderRadius: BorderRadius.circular(12),
