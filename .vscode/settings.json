@@ -1,3 +1,4 @@
 {
-  "cmake.sourceDirectory": "C:/Users/mrjee/barberapp/linux/runner"
+  "cmake.sourceDirectory": "C:/Users/mrjee/barberapp/linux/runner",
+  "java.configuration.updateBuildConfiguration": "automatic"
 }

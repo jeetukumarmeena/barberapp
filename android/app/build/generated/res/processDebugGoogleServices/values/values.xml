@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">640849399256</string>
+    <string name="google_api_key" translatable="false">AIzaSyDiK7F7eZFMqrpK2ZG35v37KV-D_LfRQnY</string>
+    <string name="google_app_id" translatable="false">1:640849399256:android:9acbaa3976987b9b43f6ad</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDiK7F7eZFMqrpK2ZG35v37KV-D_LfRQnY</string>
+    <string name="google_storage_bucket" translatable="false">barberapp-7c704.firebasestorage.app</string>
+    <string name="project_id" translatable="false">barberapp-7c704</string>
+</resources>

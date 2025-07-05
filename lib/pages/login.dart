@@ -1,3 +1,4 @@
+import 'package:barberapp/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 class LogIn extends StatefulWidget {
@@ -42,7 +43,7 @@ class _LoginState extends State<LogIn> {
                 "Hello\nSign in!",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 24.0,
+                  fontSize: 32.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -159,23 +160,27 @@ class _LoginState extends State<LogIn> {
                     Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                        TextButton(onPressed: (){
-
-                        }, 
-                         child:  Text(
-                            "Don't have an account?",
-                            style: TextStyle(
-                              color: darkColor,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        )
-                        ],
-                      ),
+                     Row(
+  mainAxisAlignment: MainAxisAlignment.end,
+  children: [
+    TextButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SignUp()), // Navigate to SignUpScreen instead
+        );
+      },
+      child: Text(
+        "Don't have an account?",
+        style: TextStyle(
+          color: darkColor,
+          fontSize: 17.0,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ),
+  ],
+),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
